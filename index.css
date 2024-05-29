@@ -7,7 +7,7 @@
 
 hmtl, body {
   font-size: 16px;
-  height: 100vh;
+  max-height: 100vh;
   margin: 0;
   font-family: 'Helvetica Neue';
 }
