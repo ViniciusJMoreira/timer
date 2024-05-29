@@ -65,6 +65,7 @@ const scrollEventSeconds = function(event) {
 // instructions for touch events
 let startY = 0;
 const touchEventHours = function (event) {
+  event.stopPropagation();
   const currentY = event.touches[0].clientY;
   const diffY = currentY - startY;
   const inputHours = document.querySelector(".input-hours");
@@ -87,6 +88,7 @@ const touchEventHours = function (event) {
   }
 };
 const touchEventMinutes = function (event) {
+  event.stopPropagation();
   const currentY = event.touches[0].clientY;
   const diffY = currentY - startY;
   const inputMinutes = document.querySelector(".input-minutes");
@@ -109,6 +111,7 @@ const touchEventMinutes = function (event) {
   }
 };
 const touchEventSeconds = function (event) {
+  event.stopPropagation();
   const currentY = event.touches[0].clientY;
   const diffY = currentY - startY;
   const inputSeconds = document.querySelector(".input-seconds");
