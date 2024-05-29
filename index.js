@@ -65,7 +65,7 @@ const scrollEventSeconds = function(event) {
 // instructions for touch events
 let startY = 0;
 const touchEventHours = function (event) {
-  event.stopPropagation();
+  event.preventDefault();
   const currentY = event.touches[0].clientY;
   const diffY = currentY - startY;
   const inputHours = document.querySelector(".input-hours");
@@ -88,7 +88,7 @@ const touchEventHours = function (event) {
   }
 };
 const touchEventMinutes = function (event) {
-  event.stopPropagation();
+  event.preventDefault();
   const currentY = event.touches[0].clientY;
   const diffY = currentY - startY;
   const inputMinutes = document.querySelector(".input-minutes");
@@ -111,7 +111,7 @@ const touchEventMinutes = function (event) {
   }
 };
 const touchEventSeconds = function (event) {
-  event.stopPropagation();
+  event.preventDefault();
   const currentY = event.touches[0].clientY;
   const diffY = currentY - startY;
   const inputSeconds = document.querySelector(".input-seconds");
@@ -144,36 +144,6 @@ containerMinutes.addEventListener("wheel", scrollEventMinutes);
 containerSeconds.addEventListener("wheel", scrollEventSeconds);
 
 // touch events
-containerHours.addEventListener("touchmove", (event) => {
-  event.stopPropagation();
-  const currentY = event.touches[0].clientY;
-  const diffY = currentY - startY;
-  const inputHours = document.querySelector(".input-hours");
-  if (Math.abs(diffY) > 10) {
-    // Detecta um arrasto mínimo de 10 pixels
-    if (diffY < 0 && inputHours.value > 0) {
-      // arrastar para cima aqui
-      inputHours.value--;
-      hourBefore.forEach((time) => time.value--);
-      hourAfter.forEach((time) => time.value--);
-    } else if (inputHours.value < 24) {
-      // arrastar para baixo aqui
-      inputHours.value++;
-      hourBefore.forEach((time) => time.value++);
-      hourAfter.forEach((time) => time.value++);
-    }
-    hourBefore.forEach((time) =>
-      time.value < 0
-        ? (time.style.visibility = "hidden")
-        : (time.style.visibility = "visible")
-    );
-    hourAfter.forEach((time) =>
-      time.value > 24
-        ? (time.style.visibility = "hidden")
-        : (time.style.visibility = "visible")
-    );
-    startY = currentY;
-  }
-});
-containerMinutes.addEventListener("touchmove", touchEventMinutes);
-containerSeconds.addEventListener("touchmove", touchEventSeconds);
+containerHours.addEventListener("touchmove", touchEventHours, {passive:false});
+containerMinutes.addEventListener("touchmove", touchEventMinutes, {passive:false});
+containerSeconds.addEventListener("touchmove", touchEventSeconds, {passive:false});
