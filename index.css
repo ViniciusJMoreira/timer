@@ -18,12 +18,15 @@ body {
   background-color: #000;
 }
 
+.roulette {
+  display: flex;
+  overflow: hidden;
+}
+
 .container {
   position: relative;
   height: 200px;
   display: grid;
-  overflow: hidden;
-  border: 1px solid;
 }
 
 input {

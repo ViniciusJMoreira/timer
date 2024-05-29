@@ -144,6 +144,36 @@ containerMinutes.addEventListener("wheel", scrollEventMinutes);
 containerSeconds.addEventListener("wheel", scrollEventSeconds);
 
 // touch events
-containerHours.addEventListener("touchmove", touchEventHours);
+containerHours.addEventListener("touchmove", (event) => {
+  event.stopPropagation();
+  const currentY = event.touches[0].clientY;
+  const diffY = currentY - startY;
+  const inputHours = document.querySelector(".input-hours");
+  if (Math.abs(diffY) > 10) {
+    // Detecta um arrasto mínimo de 10 pixels
+    if (diffY < 0 && inputHours.value > 0) {
+      // arrastar para cima aqui
+      inputHours.value--;
+      hourBefore.forEach((time) => time.value--);
+      hourAfter.forEach((time) => time.value--);
+    } else if (inputHours.value < 24) {
+      // arrastar para baixo aqui
+      inputHours.value++;
+      hourBefore.forEach((time) => time.value++);
+      hourAfter.forEach((time) => time.value++);
+    }
+    hourBefore.forEach((time) =>
+      time.value < 0
+        ? (time.style.visibility = "hidden")
+        : (time.style.visibility = "visible")
+    );
+    hourAfter.forEach((time) =>
+      time.value > 24
+        ? (time.style.visibility = "hidden")
+        : (time.style.visibility = "visible")
+    );
+    startY = currentY;
+  }
+});
 containerMinutes.addEventListener("touchmove", touchEventMinutes);
 containerSeconds.addEventListener("touchmove", touchEventSeconds);
