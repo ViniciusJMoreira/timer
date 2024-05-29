@@ -1,0 +1,109 @@
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+hmtl, body {
+  font-size: 16px;
+  height: 100vh;
+  margin: 0;
+  font-family: 'Helvetica Neue';
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000;
+}
+
+.container {
+  position: relative;
+  height: 200px;
+  display: grid;
+}
+
+input {
+  display: block;
+  background-color: transparent;
+  width: 100px;
+  outline: none;
+  border: none;
+  color: #fff;
+  text-align: center;
+}
+
+input.input-number {
+  font-size: 1.4rem;
+  background-color: #ffffff0d;
+}
+
+input:where(:nth-child(3), :nth-child(5))  {
+  opacity: .6;
+  transform: scale(.96);
+  font-size: 1.2rem;
+}
+
+input:where(:nth-child(2), :nth-child(6)) {
+  opacity: .4;
+  transform: scale(.95);
+  font-size: 1.1rem;
+}
+
+input:where(:first-child,:nth-child(7)) {
+  opacity: .2;
+  transform: scale(.90);
+}
+
+.container-hours .input-hours {
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.container-seconds .input-seconds {
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+}
+
+.container-seconds input:where(:nth-child(3), :nth-child(5))  {
+  padding-right: 5%;
+}
+.container-seconds input:where(:nth-child(2), :nth-child(6)) {
+  padding-right: 7%;
+}
+.container-seconds input:where(:first-child,:nth-child(7)) {
+  padding-right: 9%;
+}
+.container-hours input:where(:nth-child(3), :nth-child(5))  {
+  padding-left: 1%;
+}
+.container-hours input:where(:nth-child(2), :nth-child(6)) {
+  padding-left: 2%;
+}
+.container-hours input:where(:first-child,:nth-child(7)) {
+  padding-left: 3%;
+}
+
+/* span text*/
+
+span.text-input {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #fff;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.container-hours span {
+  transform: translate(170%,-50%);
+}
+.container-minutes span {
+  transform: translate(150%,-50%);
+}
+.container-seconds span {
+  transform: translate(270%,-50%);
+}
+
+/* *************************************************** */
