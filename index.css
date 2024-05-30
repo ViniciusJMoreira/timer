@@ -39,10 +39,10 @@ input {
   border-radius: 0;
 }
 
-input.input-number:disabled {
+input:disabled.input-number {
   font-size: 1.4rem;
   background-color: #191919;
-  color: #cfcfcf;
+  color: #e0e0e0;
 }
 
 input:where(:nth-child(3), :nth-child(5))  {
