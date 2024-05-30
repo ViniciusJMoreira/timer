@@ -10,7 +10,7 @@ const minutesAfter = document.querySelectorAll(".minutes-after");
 const secondsBefore = document.querySelectorAll(".seconds-before");
 const secondsAfter = document.querySelectorAll(".seconds-after");
 
-numbersBefore.forEach((time) => (time.style.visibility = time.value < 0 && 'hidden'));
+numbersBefore.forEach((time) => (time.style.visibility = time.textContent < 0 && 'hidden'));
 
 // instructions for scroll events
 const scrollEventHours = function(event) {

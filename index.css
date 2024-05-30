@@ -31,7 +31,7 @@ body {
 
 span {
   display: block;
-  width: 90px;
+  width: 80px;
   text-align: center;
   color: #e0e0e0;
   padding-block: 0.15rem;
@@ -55,7 +55,7 @@ span:where(:nth-child(2), :nth-child(6)) {
 
 span:where(:first-child,:nth-child(7)) {
   opacity: .2;
-  transform: scale(.75);
+  transform: scale(.75) rotateX(20deg) ;
 }
 
 .container-hours .input-hours {
@@ -68,49 +68,43 @@ span:where(:first-child,:nth-child(7)) {
 }
 
 .container-seconds span:where(:nth-child(3), :nth-child(5))  {
-  /* padding-right: 1%; */
-  transform: rotateX(0deg) translateZ(100deg);
+  padding-right: 1%;
 }
 .container-seconds span:where(:nth-child(2), :nth-child(6)) {
-  /* padding-right: 2%; */
-  transform: rotateX(32deg) translateZ(100deg);
+  padding-right: 2%;
 }
 .container-seconds span:where(:first-child,:nth-child(7)) {
-  /* padding-right: 4%; */
-  transform: rotateX(80deg) translateZ(100deg);
+  padding-right: 4%;
 }
 .container-hours span:where(:nth-child(3), :nth-child(5))  {
-  /* padding-left: 1%; */
-  transform: rotateX(0deg) translateZ(100deg);
+  padding-left: 1%;
 }
 .container-hours span:where(:nth-child(2), :nth-child(6)) {
-  /* padding-left: 2%; */
-  transform: rotateX(0deg) translateZ(100deg);
+  padding-left: 2%;
 }
 .container-hours span:where(:first-child,:nth-child(7)) {
-  /* padding-left: 4%; */
-  transform: rotateX(0deg) translateZ(100deg);
+  padding-left: 4%;
 }
 
 /* span text*/
 
-/* span.text-input {
+span.text-input {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 37%;
+  left: 25%;
   color: #fff;
-  font-weight: 500;
-  font-size: 1rem;
+  font-weight: 800;
+  font-size: .8rem;
 }
 
 .container-hours span.text-input {
-  transform: translate(170%,-50%);
+  /* transform: translate(170%,-50%); */
 }
 .container-minutes span.text-input {
-  transform: translate(150%,-50%);
+  /* transform: translate(150%,-50%); */
 }
 .container-seconds span.text-input {
-  transform: translate(240%,-50%);
-} */
+  /* transform: translate(240%,-50%); */
+}
 
 /* *************************************************** */
