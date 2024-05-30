@@ -39,7 +39,7 @@ input {
   border-radius: 0;
 }
 
-input:disabled.input-number {
+input:disabled:where(.input-number:disabled) {
   font-size: 1.4rem;
   background-color: #191919;
   color: #e0e0e0;
