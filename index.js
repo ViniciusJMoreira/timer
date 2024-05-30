@@ -15,51 +15,51 @@ numbersBefore.forEach((time) => (time.style.visibility = time.value < 0 && 'hidd
 // instructions for scroll events
 const scrollEventHours = function(event) {
   const inputHours = document.querySelector(".input-hours");
-  if (event.deltaY < 0 && inputHours.value < 24) {
+  if (event.deltaY < 0 && inputHours.textContent < 24) {
     // Scroll para cima
-    inputHours.value++;
-    hourBefore.forEach((time) => time.value++);
-    hourAfter.forEach((time) => time.value++);
-  } else if (event.deltaY > 0 && inputHours.value > 0) {
+    inputHours.textContent++
+    hourBefore.forEach((time) => time.textContent++);
+    hourAfter.forEach((time) => time.textContent++);
+  } else if (event.deltaY > 0 && inputHours.textContent > 0) {
     // Scroll para baixo
-    inputHours.value--;
-    hourBefore.forEach((time) => time.value--);
-    hourAfter.forEach((time) => time.value--);
+    inputHours.textContent--;
+    hourBefore.forEach((time) => time.textContent--);
+    hourAfter.forEach((time) => time.textContent--);
   }
-  hourBefore.forEach((time) => time.value < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
-  hourAfter.forEach((time) => time.value > 24 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+  hourBefore.forEach((time) => time.textContent < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+  hourAfter.forEach((time) => time.textContent > 24 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
 }
 const scrollEventMinutes = function(event) {
   const inputMinutes = document.querySelector(".input-minutes");
-  if (event.deltaY < 0 && inputMinutes.value < 60) {
+  if (event.deltaY < 0 && inputMinutes.textContent < 60) {
     // Scroll para cima
-    inputMinutes.value++;
-    minutesBefore.forEach((time) => time.value++);
-    minutesAfter.forEach((time) => time.value++);
-  } else if (event.deltaY > 0 && inputMinutes.value > 0) {
+    inputMinutes.textContent++;
+    minutesBefore.forEach((time) => time.textContent++);
+    minutesAfter.forEach((time) => time.textContent++);
+  } else if (event.deltaY > 0 && inputMinutes.textContent > 0) {
     // Scroll para baixo
-    inputMinutes.value--;
-    minutesBefore.forEach((time) => time.value--);
-    minutesAfter.forEach((time) => time.value--);
+    inputMinutes.textContent--;
+    minutesBefore.forEach((time) => time.textContent--);
+    minutesAfter.forEach((time) => time.textContent--);
   }
-  minutesBefore.forEach((time) => time.value < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
-  minutesAfter.forEach((time) => time.value > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+  minutesBefore.forEach((time) => time.textContent < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+  minutesAfter.forEach((time) => time.textContent > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
 }
 const scrollEventSeconds = function(event) {
   const inputSeconds = document.querySelector(".input-seconds");
-  if (event.deltaY < 0 && inputSeconds.value < 60) {
+  if (event.deltaY < 0 && inputSeconds.textContent < 60) {
     // Scroll para cima
-    inputSeconds.value++;
-    secondsBefore.forEach((time) => time.value++);
-    secondsAfter.forEach((time) => time.value++);
-  } else if (event.deltaY > 0 && inputSeconds.value > 0) {
+    inputSeconds.textContent++;
+    secondsBefore.forEach((time) => time.textContent++);
+    secondsAfter.forEach((time) => time.textContent++);
+  } else if (event.deltaY > 0 && inputSeconds.textContent > 0) {
     // Scroll para baixo
-    inputSeconds.value--;
-    secondsBefore.forEach((time) => time.value--);
-    secondsAfter.forEach((time) => time.value--);
+    inputSeconds.textContent--;
+    secondsBefore.forEach((time) => time.textContent--);
+    secondsAfter.forEach((time) => time.textContent--);
   }
-  secondsBefore.forEach((time) => time.value < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
-  secondsAfter.forEach((time) => time.value > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+  secondsBefore.forEach((time) => time.textContent < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+  secondsAfter.forEach((time) => time.textContent > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
 }
 
 // instructions for touch events
@@ -71,19 +71,19 @@ const touchEventHours = function (event) {
   const inputHours = document.querySelector(".input-hours");
   if (Math.abs(diffY) > 10) {
     // Detecta um arrasto mínimo de 10 pixels
-    if (diffY < 0 && inputHours.value > 0) {
+    if (diffY < 0 && inputHours.textContent > 0) {
       // arrastar para cima aqui
-      inputHours.value--;
-      hourBefore.forEach((time) => time.value--);
-      hourAfter.forEach((time) => time.value--);
-    } else if (inputHours.value < 24) {
+      inputHours.textContent--;
+      hourBefore.forEach((time) => time.textContent--);
+      hourAfter.forEach((time) => time.textContent--);
+    } else if (inputHours.textContent < 24) {
       // arrastar para baixo aqui
-      inputHours.value++;
-      hourBefore.forEach((time) => time.value++);
-      hourAfter.forEach((time) => time.value++);
+      inputHours.textContent++;
+      hourBefore.forEach((time) => time.textContent++);
+      hourAfter.forEach((time) => time.textContent++);
     }
-    hourBefore.forEach((time) => time.value < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
-    hourAfter.forEach((time) => time.value > 24 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+    hourBefore.forEach((time) => time.textContent < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+    hourAfter.forEach((time) => time.textContent > 24 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
     startY = currentY;
   }
 };
@@ -94,19 +94,19 @@ const touchEventMinutes = function (event) {
   const inputMinutes = document.querySelector(".input-minutes");
   if (Math.abs(diffY) > 10) {
     // Detecta um arrasto mínimo de 10 pixels
-    if (diffY < 0 && inputMinutes.value > 0) {
+    if (diffY < 0 && inputMinutes.textContent > 0) {
       // arrastar para cima aqui
-      inputMinutes.value--;
-      minutesBefore.forEach((time) => time.value--);
-      minutesAfter.forEach((time) => time.value--);
-    } else if (inputMinutes.value < 60) {
+      inputMinutes.textContent--;
+      minutesBefore.forEach((time) => time.textContent--);
+      minutesAfter.forEach((time) => time.textContent--);
+    } else if (inputMinutes.textContent < 60) {
       // arrastar para baixo aqui
-      inputMinutes.value++;
-      minutesBefore.forEach((time) => time.value++);
-      minutesAfter.forEach((time) => time.value++);
+      inputMinutes.textContent++;
+      minutesBefore.forEach((time) => time.textContent++);
+      minutesAfter.forEach((time) => time.textContent++);
     }
-    minutesBefore.forEach((time) => time.value < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
-    minutesAfter.forEach((time) => time.value > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+    minutesBefore.forEach((time) => time.textContent < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+    minutesAfter.forEach((time) => time.textContent > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
     startY = currentY;
   }
 };
@@ -117,19 +117,19 @@ const touchEventSeconds = function (event) {
   const inputSeconds = document.querySelector(".input-seconds");
   if (Math.abs(diffY) > 10) {
     // Detecta um arrasto mínimo de 10 pixels
-    if (diffY < 0 && inputSeconds.value > 0) {
+    if (diffY < 0 && inputSeconds.textContent > 0) {
       // arrastar para cima aqui
-      inputSeconds.value--;
-      secondsBefore.forEach((time) => time.value--);
-      secondsAfter.forEach((time) => time.value--);
-    } else if (inputSeconds.value < 60) {
+      inputSeconds.textContent--;
+      secondsBefore.forEach((time) => time.textContent--);
+      secondsAfter.forEach((time) => time.textContent--);
+    } else if (inputSeconds.textContent < 60) {
       // arrastar para baixo aqui
-      inputSeconds.value++;
-      secondsBefore.forEach((time) => time.value++);
-      secondsAfter.forEach((time) => time.value++);
+      inputSeconds.textContent++;
+      secondsBefore.forEach((time) => time.textContent++);
+      secondsAfter.forEach((time) => time.textContent++);
     }
-    secondsBefore.forEach((time) => time.value < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
-    secondsAfter.forEach((time) => time.value > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+    secondsBefore.forEach((time) => time.textContent < 0 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
+    secondsAfter.forEach((time) => time.textContent > 60 ? (time.style.visibility = 'hidden') : (time.style.visibility = 'visible'));
     startY = currentY;
   }
 };
